@@ -37,18 +37,16 @@ var b = {
 }
 
 var age = document.getElementById('age');
-out = '';
 
-age.oninput = function () {
-
+var out = '';
+document.getElementById('wantKnow').onclick = function () {
     var ageVal = age.value;
     console.log(ageVal);
-
+    out = '';
     for(key in b) {
-        if (b[key].age == ageVal) {
-            out = b[key].name + '--' + b[key].age;
+     if(b[key].age <= ageVal){
+            out += b[key].name + '--' + b[key].age + '<br>';
         }
     }
     document.getElementById('task2').innerHTML = out;
-
-}
+ }
